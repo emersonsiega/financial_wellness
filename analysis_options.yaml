@@ -1,0 +1,15 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    dead_code: error
+linter:
+  rules:
+    directives_ordering: true
+    always_use_package_imports: true
+    require_trailing_commas: true
+    prefer_single_quotes: true
+    unnecessary_lambdas: true
+    use_if_null_to_convert_nulls_to_bools: true
+    prefer_final_locals: true
+    prefer_const_constructors: true
