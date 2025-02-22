@@ -1,26 +1,51 @@
-# financial_wellness
+# Financial Wellness
 
-A new Flutter project.
+Financial Wellness is an app that helps people to keep track of their financial situation.
+
+In order to do that, users registers information regarding their financial situation. Two key pieces of information are his annual gross income and average monthly costs.
+
+Based on that information, the system calculates a score to represent how healthy his financial life is - Healthy, Medium or Low.
+
+## Setup
+
+Install Flutter version 3.29.0.
+
+Run the app as any regular Flutter app.
+
+## Design system
+
+The app design system follows the Figma prototype definitions, using its colors, text styles and assets.
 
 
-PRIMARY:
-#001C95
+### Color Palette
 
-TEXT:
-#000000 - ultraDark
-#1E2A32 - darker
-#4D6475 - dark
-#708797 - regular
-#8A9CA9 - light
-#CBD5DC - lighter
-#FFFFFF - ultraLight
+The color palette was designed to implement a custom interface called `IAppColorPalette`. In the long term it can be useful for a white-label implementation.
 
-BACKGROUND:
-#FFFFFF - ultra light
-#F4F8FA - ligher
-#E9EEF2 - light
+The colors was named to make its usage easier. An improvement can be made by talking to UX team to follow the same name convention in the prototype.
 
-STATUS:
-#04C761 - success
-#FFC032 - warning
-#D32A36 - attention
+The color palette can be accessed through a `BuildContext` extension:
+
+```dart
+Container(
+    color: context.colors.primary,
+)
+```
+
+### Typography
+
+Two font families were used: Work Sans and Rubik. Both are downloaded through `GoogleFonts` package.
+
+The text styles were named according to the Figma description, but, as the color palette, it also can be improved in order to make all the used styles more clear and organized in one stylesheet.
+
+The text styles can be accessed through a `BuildContext` extension:
+
+```dart
+Text(
+    'Example',
+    fontStyle: context.text.xs.headingSmall,
+)
+```
+
+### Assets
+
+All app assets are available through `AppAssets` and `AppIcons`.
