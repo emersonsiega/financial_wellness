@@ -10,5 +10,5 @@ abstract class IEntity<V extends IValidation> {
   /// ```dart
   /// return [MyExampleValidation.fieldARequired(), MyExampleValidation.fieldBInvalid()];
   /// ```
-  List<V> isValid();
+  List<V> isValid() => [];
 }
