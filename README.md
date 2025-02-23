@@ -15,7 +15,7 @@ Run the app as any regular Flutter app.
 ## Project structure
 
 This project follows the official [Flutter Architecture Guide](https://docs.flutter.dev/app-architecture/guide).
-As it's a small project, only two layers were necessary: `domain` and `presentation`. 
+As it's a small project, only three layers were necessary: `domain`, `data` and `presentation`. 
 
 #### Domain layer
 
@@ -23,9 +23,19 @@ Holds the Entites and Use Cases. It's where all the important application rules 
 
 Entities are the backbone of our application. The UI will always use them, so keep it simple.
 
-#### Presentation
+Usecases are responsible to implement business rules, consuming and returning entities. Also, are responsible to interact with the data layer.
+
+#### Data layer
+
+Layer responsible for handle the access to remote or local data sources. This data source can be anything, from a local file (👋 `AppConstants`), to a remote API or local database.
+
+I this project the data layer was added just to deliver the current tax rate. If some day this tax rate come from a REST API, we are safe.
+
+#### Presentation layer
 
 This layer is responsible for centralize all the user interface related content, such as theme, colors, typography, icons, custom widgets and the views.
+
+<!-- TODO: MVVM, communication flow.. -->
 
 
 ## Design system

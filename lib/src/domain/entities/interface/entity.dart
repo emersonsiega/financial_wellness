@@ -1,7 +1,7 @@
-import 'package:financial_wellness/src/domain/validations/validations.dart';
+import 'package:financial_wellness/src/domain/exceptions/validations/validations.dart';
 
 /// Represents an Entity.
-/// Should implement the [isValid] method
+/// Should implement the [validate] method
 abstract class IEntity<V extends IValidation> {
   /// This method can be used to ensure that the data held by the entity is valid according to the business rules.
   ///
@@ -10,5 +10,5 @@ abstract class IEntity<V extends IValidation> {
   /// ```dart
   /// return [MyExampleValidation.fieldARequired(), MyExampleValidation.fieldBInvalid()];
   /// ```
-  List<V> isValid() => [];
+  List<V> validate() => [];
 }
