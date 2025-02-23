@@ -1,0 +1,20 @@
+{
+    "score": {
+        "input": {
+            "disclaimer(rich)": "Let's find out your {darker(financial\nwellness score.)}",
+            "title": "Financial wellness test",
+            "inputRequest": "Enter your financial information below",
+            "annualIncomeInput": "Annual income",
+            "monthlyCostsInput": "Monthly costs",
+            "continueCTA": "Continue",
+            "validations": {
+                "annualIncome": "Annual income should be greater than zero",
+                "monthlyCosts": "Monthly costs should be greater than zero"
+            },
+            "failures": {
+                "fetching": "Something wrong happened. Try again later!"
+            }
+        },
+        "securityDisclaimer": "Your financial information is encrypted and\nsecure. We'll never share or sell any of your\npersonal data."
+    }
+}

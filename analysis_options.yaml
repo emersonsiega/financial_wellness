@@ -3,6 +3,10 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     dead_code: error
+  exclude:
+    - build/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
 linter:
   rules:
     directives_ordering: true

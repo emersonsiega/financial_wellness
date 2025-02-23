@@ -1,16 +1,23 @@
 import 'package:financial_wellness/src/domain/entities/interface/interface.dart';
 import 'package:financial_wellness/src/domain/exceptions/validations/validations.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'user_financial_data.freezed.dart';
 
 /// This class holds the system required information about the user financial data.
 /// To be considered valid, the data should be non-null and greater than zero.
-class UserFinancialData extends IEntity<UserFinancialDataValidation> {
-  /// Annual gross income
-  final double annualIncome;
+@freezed
+class UserFinancialData extends IEntity<UserFinancialDataValidation>
+    with _$UserFinancialData {
+  const UserFinancialData._();
 
-  /// Average monthly costs
-  final double monthlyCosts;
+  factory UserFinancialData({
+    /// Annual gross income
+    @Default(0) double annualIncome,
 
-  UserFinancialData({this.annualIncome = 0.0, this.monthlyCosts = 0.0});
+    /// Average monthly costs
+    @Default(0) double monthlyCosts,
+  }) = _UserFinancialData;
 
   /// Calculates the annual cost, based on the [monthlyCosts], by multiplying this number by 12 months.
   double get annualCost => 12 * monthlyCosts;

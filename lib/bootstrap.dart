@@ -1,5 +1,6 @@
 import 'package:financial_wellness/src/data/data.dart';
 import 'package:financial_wellness/src/domain/domain.dart';
+import 'package:financial_wellness/src/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,6 +13,7 @@ Future<void> boostrap() async {
 Future setupDI() async {
   setupDataDI();
   setupDomainDI();
+  setupPresentationDI();
 }
 
 Future setupFonts() async {

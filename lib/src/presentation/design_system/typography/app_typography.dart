@@ -38,16 +38,26 @@ class XSTextStyle extends IAppTypography {
              ),
          description:
              description ??
-             GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 12)),
+             GoogleFonts.workSans(
+               textStyle: const TextStyle(fontSize: 12, height: 1.5),
+             ),
          headingSmall:
              headingSmall ??
-             GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 20)),
+             GoogleFonts.rubik(
+               textStyle: const TextStyle(
+                 fontSize: 20,
+                 height: 1.2,
+                 fontWeight: FontWeight.w500,
+               ),
+             ),
          paragraph:
              paragraph ??
              GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 14)),
          subtitle:
              subtitle ??
-             GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 18)),
+             GoogleFonts.workSans(
+               textStyle: const TextStyle(fontSize: 18, height: 1.5),
+             ),
        );
 }
 
@@ -73,7 +83,11 @@ class LGTextStyle extends IAppTypography {
              GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 12)),
          headingSmall:
              headingSmall ??
-             GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 24)),
+             GoogleFonts.rubik(
+               textStyle: const TextStyle(fontSize: 24),
+               fontWeight: FontWeight.w500,
+               height: 1.2,
+             ),
          paragraph:
              paragraph ??
              GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 14)),
