@@ -12,6 +12,22 @@ Install Flutter version 3.29.0.
 
 Run the app as any regular Flutter app.
 
+## Project structure
+
+This project follows the official [Flutter Architecture Guide](https://docs.flutter.dev/app-architecture/guide).
+As it's a small project, only two layers were necessary: `domain` and `presentation`. 
+
+#### Domain layer
+
+Holds the Entites and Use Cases. It's where all the important application rules and business rules are implemented.
+
+Entities are the backbone of our application. The UI will always use them, so keep it simple.
+
+#### Presentation
+
+This layer is responsible for centralize all the user interface related content, such as theme, colors, typography, icons, custom widgets and the views.
+
+
 ## Design system
 
 The app design system follows the Figma prototype definitions, using its colors, text styles and assets.
