@@ -15,6 +15,21 @@
                 "fetching": "Something wrong happened. Try again later!"
             }
         },
+        "result": {
+            "disclaimer(rich)": "Here's your {darker(financial wellness\nscore.)}",
+            "name(context=FinancialWellnessScore, param=score)": {
+                "healthy": "Healthy",
+                "medium": "Average",
+                "low": "Unhealthy"
+            },
+            "title(context=FinancialWellnessScore, param=score)": {
+                "healthy": "Congratulations!",
+                "medium": "There is room for\nimprovement.",
+                "low": "Caution!"
+            },
+            "text(rich)": "Your financial wellness score is\n{name}.",
+            "returnCTA": "Return"
+        },
         "securityDisclaimer": "Your financial information is encrypted and\nsecure. We'll never share or sell any of your\npersonal data."
     }
 }

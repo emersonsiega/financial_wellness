@@ -13,6 +13,9 @@ class AppSpacing {
 
   /// Extra large - 24
   double get xl => 24;
+
+  /// Extra extra large - 24
+  double get xxl => 32;
 }
 
 extension AppSpacingExtension on double {

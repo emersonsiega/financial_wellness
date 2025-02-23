@@ -11,3 +11,8 @@ targets:
           output_file_name: translations.g.dart
           string_interpolation: braces
           namespaces: true 
+          imports:
+            - 'package:financial_wellness/src/domain/entities/entities.dart'
+          contexts:
+            FinancialWellnessScore:
+              generate_enum: false

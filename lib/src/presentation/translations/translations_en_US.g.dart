@@ -58,6 +58,7 @@ class TranslationsSharedScoreEnUs {
 
 	// Translations
 	late final TranslationsSharedScoreInputEnUs input = TranslationsSharedScoreInputEnUs.internal(_root);
+	late final TranslationsSharedScoreResultEnUs result = TranslationsSharedScoreResultEnUs.internal(_root);
 	String get securityDisclaimer => 'Your financial information is encrypted and\nsecure. We\'ll never share or sell any of your\npersonal data.';
 }
 
@@ -79,6 +80,45 @@ class TranslationsSharedScoreInputEnUs {
 	String get continueCTA => 'Continue';
 	late final TranslationsSharedScoreInputValidationsEnUs validations = TranslationsSharedScoreInputValidationsEnUs.internal(_root);
 	late final TranslationsSharedScoreInputFailuresEnUs failures = TranslationsSharedScoreInputFailuresEnUs.internal(_root);
+}
+
+// Path: shared.score.result
+class TranslationsSharedScoreResultEnUs {
+	TranslationsSharedScoreResultEnUs.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	TextSpan disclaimer({required InlineSpanBuilder darker}) => TextSpan(children: [
+		const TextSpan(text: 'Here\'s your '),
+		darker('financial wellness\nscore.'),
+	]);
+	String name({required FinancialWellnessScore score}) {
+		switch (score) {
+			case FinancialWellnessScore.healthy:
+				return 'Healthy';
+			case FinancialWellnessScore.medium:
+				return 'Average';
+			case FinancialWellnessScore.low:
+				return 'Unhealthy';
+		}
+	}
+	String title({required FinancialWellnessScore score}) {
+		switch (score) {
+			case FinancialWellnessScore.healthy:
+				return 'Congratulations!';
+			case FinancialWellnessScore.medium:
+				return 'There is room for\nimprovement.';
+			case FinancialWellnessScore.low:
+				return 'Caution!';
+		}
+	}
+	TextSpan text({required InlineSpan name}) => TextSpan(children: [
+		const TextSpan(text: 'Your financial wellness score is\n'),
+		name,
+		const TextSpan(text: '.'),
+	]);
+	String get returnCTA => 'Return';
 }
 
 // Path: shared.score.input.validations
@@ -119,6 +159,36 @@ extension on Translations {
 			case 'shared.score.input.validations.annualIncome': return 'Annual income should be greater than zero';
 			case 'shared.score.input.validations.monthlyCosts': return 'Monthly costs should be greater than zero';
 			case 'shared.score.input.failures.fetching': return 'Something wrong happened. Try again later!';
+			case 'shared.score.result.disclaimer': return ({required InlineSpanBuilder darker}) => TextSpan(children: [
+				const TextSpan(text: 'Here\'s your '),
+				darker('financial wellness\nscore.'),
+			]);
+			case 'shared.score.result.name': return ({required FinancialWellnessScore score}) {
+				switch (score) {
+					case FinancialWellnessScore.healthy:
+						return 'Healthy';
+					case FinancialWellnessScore.medium:
+						return 'Average';
+					case FinancialWellnessScore.low:
+						return 'Unhealthy';
+				}
+			};
+			case 'shared.score.result.title': return ({required FinancialWellnessScore score}) {
+				switch (score) {
+					case FinancialWellnessScore.healthy:
+						return 'Congratulations!';
+					case FinancialWellnessScore.medium:
+						return 'There is room for\nimprovement.';
+					case FinancialWellnessScore.low:
+						return 'Caution!';
+				}
+			};
+			case 'shared.score.result.text': return ({required InlineSpan name}) => TextSpan(children: [
+				const TextSpan(text: 'Your financial wellness score is\n'),
+				name,
+				const TextSpan(text: '.'),
+			]);
+			case 'shared.score.result.returnCTA': return 'Return';
 			case 'shared.score.securityDisclaimer': return 'Your financial information is encrypted and\nsecure. We\'ll never share or sell any of your\npersonal data.';
 			default: return null;
 		}

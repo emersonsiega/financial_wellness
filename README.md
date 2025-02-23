@@ -35,7 +35,62 @@ I this project the data layer was added just to deliver the current tax rate. If
 
 This layer is responsible for centralize all the user interface related content, such as theme, colors, typography, icons, custom widgets and the views.
 
-<!-- TODO: MVVM, communication flow.. -->
+It uses the MVVM pattern, using `Cubit` as its state management system.
+
+#### Communicating between layers
+
+The external layers can see and access the internal layers, but the internal layers should never know the external layers exists.
+
+Following this idea, our business rules and most important classes will never be affected by any external factors.
+
+To cross the boundaries we should use the dependency inversion principle (DIP), depending always on abstractions.
+
+Here is a practical example where a UI controller depends on a usecase, which in turn depends on a repository to execute some feature. They always depends on abstractions. Take a look:
+
+```dart
+// src/presentation/views/some_feature/my_controller.dart
+class MyController {
+    final IMyUsecase _myUsecase;
+    MyController(this._myUsecase);
+}
+
+// src/domain/usecases/my_usecase.dart
+abstract class IMyUsecase {
+    void doSomething();
+}
+
+class MyUsecase extends IMyUsecase {
+    final IMyRepository _myRepository;
+    MyUsecase(this._myRepository);
+
+    @override
+    void doSomething() {
+        _myRepository.doWhatever();
+    }
+}
+
+// src/domain/interfaces/repositories/my_repository.dart
+// The repository interface is a prerequisite of a usecase, so it is kept inside domain layer
+abstract class IMyRepository {
+    void doWhatever();
+}
+
+// src/data/repositories/my_repository.dart
+// The implementation goes to the data layer
+class MyRepository extends IMyRepository {
+    void doWhatever() {
+        print('hi');
+    }
+}
+
+// src/boostrap.dart
+// The entrypoint or  "shell application" or "host". Is where all the things are put together and usually added to a dependency injection/service locator system 
+void bootstrap() {
+    IMyRepository myRepository = MyRepository();
+    IMyUsecase myUsecase = MyUsecase(myRepository);
+    MyController(myUsecase);
+}
+```
 
 
 ## Design system
@@ -75,3 +130,9 @@ Text(
 ### Assets
 
 All app assets are available through `AppAssets` and `AppIcons`.
+
+## I18n
+
+The package [Slang](https://pub.dev/packages/slang) was used to handle the internationalization. It's a complete solution that delivers some cool features like linking text entries to enums or building rich text to merge different styles in the same text.
+
+All the strings are stored in the `assets/i18n` folder. The `build_runner` should be executed whenever the content in this folder changes.

@@ -52,7 +52,13 @@ class XSTextStyle extends IAppTypography {
              ),
          paragraph:
              paragraph ??
-             GoogleFonts.workSans(textStyle: const TextStyle(fontSize: 14)),
+             GoogleFonts.workSans(
+               textStyle: const TextStyle(
+                 fontSize: 14,
+                 fontWeight: FontWeight.w400,
+                 height: 1.5,
+               ),
+             ),
          subtitle:
              subtitle ??
              GoogleFonts.workSans(

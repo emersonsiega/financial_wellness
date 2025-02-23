@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       scrolledUnderElevation: 0,
+      leading: const SizedBox(),
       title: AppAssets.kalshiLogo.build(
         height: 20,
         color: context.colors.foreground.ultraDark,

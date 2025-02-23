@@ -4,13 +4,14 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 10
+/// Strings: 19
 ///
-/// Built on 2025-02-23 at 17:22 UTC
+/// Built on 2025-02-23 at 20:13 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
 
+import 'package:financial_wellness/src/domain/entities/entities.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:slang/generated.dart';

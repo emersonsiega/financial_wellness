@@ -64,7 +64,12 @@ class _ScoreInputPageState
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(context.spacing.lg),
+              padding: EdgeInsets.fromLTRB(
+                context.spacing.lg,
+                0,
+                context.spacing.lg,
+                context.spacing.lg,
+              ),
               child: BlocConsumer<ScoreInputController, ScoreInputState>(
                 bloc: controller,
                 listener: (context, state) {
@@ -93,7 +98,6 @@ class _ScoreInputPageState
                           textAlign: TextAlign.center,
                           style: context.text.xs.paragraph.copyWith(
                             color: context.colors.foreground.regular,
-                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         context.spacing.lg.vertical,
