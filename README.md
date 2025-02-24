@@ -6,6 +6,9 @@ In order to do that, users registers information regarding their financial situa
 
 Based on that information, the system calculates a score to represent how healthy his financial life is - Healthy, Medium or Low.
 
+Demo:
+![Demo](assets/images/app.webp)
+
 ## Setup
 
 Install Flutter version 3.29.0.
