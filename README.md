@@ -6,8 +6,8 @@ In order to do that, users registers information regarding their financial situa
 
 Based on that information, the system calculates a score to represent how healthy his financial life is - Healthy, Medium or Low.
 
-Demo:
-![Demo](assets/images/app.webp)
+Demo:  
+<img src="assets/images/app.webp" width="250">  
 
 ## Setup
 
