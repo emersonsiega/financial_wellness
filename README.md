@@ -32,7 +32,7 @@ Usecases are responsible to implement business rules, consuming and returning en
 
 Layer responsible for handle the access to remote or local data sources. This data source can be anything, from a local file (👋 `AppConstants`), to a remote API or local database.
 
-I this project the data layer was added just to deliver the current tax rate. If some day this tax rate come from a REST API, we are safe.
+In this project the data layer was added just to deliver the current tax rate. If some day this tax rate come from a REST API, we are safe.
 
 #### Presentation layer
 
