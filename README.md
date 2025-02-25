@@ -22,7 +22,7 @@ As it's a small project, only three layers were necessary: `domain`, `data` and 
 
 #### Domain layer
 
-Holds the Entites and Use Cases. It's where all the important application rules and business rules are implemented.
+Holds the Entities and Use Cases. It's where all the important application rules and business rules are implemented.
 
 Entities are the backbone of our application. The UI will always use them, so keep it simple.
 
